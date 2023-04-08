@@ -2,7 +2,7 @@
   <head>
     <title>OSM Paraguay</title>
 
-    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
@@ -24,6 +24,13 @@
       rel="stylesheet"
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="assets/css/styles.css" charset="utf-8" />
 
@@ -49,121 +56,171 @@
       charset="utf-8"
     ></script>
   </head>
-  <body onLoad="loadMap()">
+  <body class="bg-light" onLoad="loadMap()">
     <header class="jumbotron jumbotron-fluid bg-info text-white">
       <div class="container text-center my-4">
         <h2 class="display-5">Obtener datos OSM</h2>
       </div>
     </header>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div
-            id="map"
-            style="width: 100%; height: 400px; border: 1px solid #aaa"
-          ></div>
-        </div>
-        <div class="col-md-6">
-          <form class="row g-3" role="form" action="#" method="post">
-            <div class="col-md-6">
-              <label for="road" class="form-label">Calle</label>
-              <input
-                class="form-control"
-                type="text"
-                id="road"
-                value=""
-                readonly
-              />
-            </div>
-            <div class="col-md-6">
-              <label for="neighbourhood" class="form-label">Barrio</label>
-              <input
-                class="form-control"
-                type="text"
-                id="neighbourhood"
-                value=""
-                readonly
-              />
-            </div>
-            <div class="col-md-6">
-              <label for="city" class="form-label">Ciudad</label>
-              <input
-                class="form-control"
-                type="text"
-                id="city"
-                value=""
-                readonly
-              />
-            </div>
-            <div class="col-md-6">
-              <label for="state" class="form-label">Departamento</label>
-              <input
-                class="form-control"
-                type="text"
-                id="state"
-                value=""
-                readonly
-              />
-            </div>
-            <div class="col-md-6">
-              <label for="country" class="form-label">Pa&iacute;s</label>
-              <input
-                class="form-control"
-                type="text"
-                id="country"
-                value=""
-                readonly
-              />
-            </div>
-            <div class="col-md-6">
-              <label for="coordinates" class="form-label">Coordenadas</label>
-              <input
-                class="form-control"
-                type="text"
-                id="coordinates"
-                value=""
-                readonly
-              />
-            </div>
-            <div class="col-md-6">
-              <label for="osmId" class="form-label">osm_id</label>
-              <input
-                class="form-control"
-                type="text"
-                id="osmId"
-                value=""
-                readonly
-              />
-            </div>
-            <div class="col-md-6">
-              <label for="osmType" class="form-label">osm_type</label>
-              <input
-                class="form-control"
-                type="text"
-                id="osmType"
-                value=""
-                readonly
-              />
-            </div>
-            <div class="col-md-12">
-              <input
-                class="form-control"
-                type="hidden"
-                id="user_lat"
-                value=""
-              />
-            </div>
-            <div class="col-md-12">
-              <input
-                class="form-control"
-                type="hidden"
-                id="user_lng"
-                value=""
-              />
-            </div>
-          </form>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div
+              id="map"
+              style="width: 100%; height: 400px; border: 1px solid #aaa"
+            ></div>
+          </div>
+          <div class="col-md-6 mt-4">
+            <form class="row g-3" role="form" action="#" method="post">
+              <div class="col-md-6">
+                <label for="road" class="form-label">Calle</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="road"
+                  value=""
+                  readonly
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="neighbourhood" class="form-label">Barrio</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="neighbourhood"
+                  value=""
+                  readonly
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="city" class="form-label">Ciudad</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="city"
+                  value=""
+                  readonly
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="state" class="form-label">Departamento</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="state"
+                  value=""
+                  readonly
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="country" class="form-label">Pa&iacute;s</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="country"
+                  value=""
+                  readonly
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="coordinates" class="form-label">Coordenadas</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="coordinates"
+                  value=""
+                  readonly
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="osmId" class="form-label">osm_id</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="osmId"
+                  value=""
+                  readonly
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="osmType" class="form-label">osm_type</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="osmType"
+                  value=""
+                  readonly
+                />
+              </div>
+              <div class="col-md-12">
+                <input
+                  class="form-control"
+                  type="hidden"
+                  id="user_lat"
+                  value=""
+                />
+              </div>
+              <div class="col-md-12">
+                <input
+                  class="form-control"
+                  type="hidden"
+                  id="user_lng"
+                  value=""
+                />
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
+
+    <footer class="mt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <h6>S&iacute;guenos en redes sociales:</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://t.me/osm_py">
+                  <i class="fab fa-telegram fa-lg"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/OpenStreetMapPy">
+                  <i class="fab fa-twitter fa-lg"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/osmparaguay/">
+                  <i class="fab fa-facebook fa-lg"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/openstreetmappy/">
+                  <i class="fab fa-instagram fa-lg"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/channel/UCl5JnNe84TiAF_MWfdGilNQ"
+                >
+                  <i class="fab fa-youtube fa-lg"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 text-center">
+            <h6>Enlaces interesantes</h6>
+            <ul class="list-unstyled">
+              <li><a href="https://www.openstreetmap.org/">OpenStretMap</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h6>&copy; 2023 OSM Paraguay. Todos los derechos reservados.</h6>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

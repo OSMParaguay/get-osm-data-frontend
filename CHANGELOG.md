@@ -4,6 +4,7 @@
 
 * [style] Change side to the map.
 * [feat] Add favicon.
+* [feat] Add footer.
 
 ## v1.0.0
 
