@@ -7,6 +7,7 @@
 * [feat] Add footer.
 * [fix] OpenStreetMap in the footer.
 * [style] Change in the footer.
+* [style] The header was improved.
 
 ## v1.0.0
 
