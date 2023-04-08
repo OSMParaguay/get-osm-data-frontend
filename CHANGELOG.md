@@ -4,3 +4,4 @@
 
 * [feat] Add OSM map with form.
 * [feat] Add Nominatim OSM.
+* [feat] Add osm_id and osm_type in the form.

@@ -57,71 +57,89 @@
         <div class="col-md-6">
           <form class="row g-3" role="form" action="#" method="post">
             <div class="col-md-6">
-              <label for="inputCalle" class="form-label">Calle</label>
+              <label for="road" class="form-label">Calle</label>
               <input
                 class="form-control"
                 type="text"
-                id="inputCalle"
-                name="user_calle"
+                id="road"
                 value=""
                 readonly
               />
             </div>
             <div class="col-md-6">
-              <label for="inputBarrio" class="form-label">Barrio</label>
+              <label for="neighbourhood" class="form-label">Barrio</label>
               <input
                 class="form-control"
                 type="text"
-                id="inputBarrio"
-                name="user_barrio"
+                id="neighbourhood"
                 value=""
                 readonly
               />
             </div>
             <div class="col-md-6">
-              <label for="inputCiudad" class="form-label">Ciudad</label>
+              <label for="city" class="form-label">Ciudad</label>
               <input
                 class="form-control"
                 type="text"
-                id="inputCiudad"
-                name="user_ciudad"
+                id="city"
                 value=""
                 readonly
               />
             </div>
             <div class="col-md-6">
-              <label for="inputDepartamento" class="form-label"
+              <label for="state" class="form-label"
                 >Departamento</label
               >
               <input
                 class="form-control"
                 type="text"
-                id="inputDepartamento"
-                name="user_departamento"
+                id="state"
                 value=""
                 readonly
               />
             </div>
             <div class="col-md-6">
-              <label for="inputPais" class="form-label">Pa&iacute;s</label>
+              <label for="country" class="form-label">Pa&iacute;s</label>
               <input
                 class="form-control"
                 type="text"
-                id="inputPais"
-                name="user_pais"
+                id="country"
                 value=""
                 readonly
               />
             </div>
             <div class="col-md-6">
-              <label for="inputCoordenadas" class="form-label"
+              <label for="coordinates" class="form-label"
                 >Coordenadas</label
               >
               <input
                 class="form-control"
                 type="text"
-                id="inputCoordenadas"
-                name="user_coordenadas"
+                id="coordinates"
+                value=""
+                readonly
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="osmId" class="form-label"
+                >osm_id</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                id="osmId"
+                value=""
+                readonly
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="osmType" class="form-label"
+                >osm_type</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                id="osmType"
                 value=""
                 readonly
               />
@@ -131,9 +149,7 @@
                 class="form-control"
                 type="hidden"
                 id="user_lat"
-                name="user_lat"
                 value=""
-                placeholder="Mover en el mapa"
               />
             </div>
             <div class="col-md-12">
@@ -141,9 +157,7 @@
                 class="form-control"
                 type="hidden"
                 id="user_lng"
-                name="user_lng"
                 value=""
-                placeholder="Mover en el mapa"
               />
             </div>
           </form>

@@ -16,7 +16,7 @@ function loadMap() {
     minZoom: minZoom,
     maxZoom: maxZoom,
     fullscreenControl: true,
-    scrollWheelZoom: false,
+    scrollWheelZoom: true,
     fullscreenControlOptions: {
       position: "topleft",
     },
@@ -107,7 +107,7 @@ const fetchData = async () => {
 };
 
 const setForm = (data) => {
-  const { address, lat, lon } = data || {};
+  const { osm_id, osm_type, address, lat, lon } = data || {};
   const {
     road = "",
     neighbourhood = address?.neighbourhood ||
@@ -120,10 +120,12 @@ const setForm = (data) => {
   } = address || {};
   const coordinates = [lat, lon].filter(Boolean).join(", ");
 
-  document.getElementById("inputCalle").value = road;
-  document.getElementById("inputBarrio").value = neighbourhood;
-  document.getElementById("inputCiudad").value = city;
-  document.getElementById("inputDepartamento").value = state;
-  document.getElementById("inputPais").value = country;
-  document.getElementById("inputCoordenadas").value = coordinates;
+  document.getElementById("road").value = road;
+  document.getElementById("neighbourhood").value = neighbourhood;
+  document.getElementById("city").value = city;
+  document.getElementById("state").value = state;
+  document.getElementById("country").value = country;
+  document.getElementById("coordinates").value = coordinates;
+  document.getElementById("osmId").value = osm_id;
+  document.getElementById("osmType").value = osm_type;
 };
