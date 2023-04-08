@@ -8,6 +8,7 @@
 * [fix] OpenStreetMap in the footer.
 * [style] Change in the footer.
 * [style] The header was improved.
+* [feat] Add more links in the header.
 
 ## v1.0.0
 
