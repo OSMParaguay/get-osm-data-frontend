@@ -10,6 +10,7 @@
 * [style] The header was improved.
 * [feat] Add more links in the header.
 * [feat] Add an edit button for openstreetmap.
+* [refactor] Create link OSM edition.
 
 ## v1.0.0
 
