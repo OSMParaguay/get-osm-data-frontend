@@ -6,6 +6,7 @@
 * [feat] Add favicon.
 * [feat] Add footer.
 * [fix] OpenStreetMap in the footer.
+* [style] Change in the footer.
 
 ## v1.0.0
 
