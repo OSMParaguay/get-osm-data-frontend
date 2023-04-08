@@ -128,4 +128,16 @@ const setForm = (data) => {
   document.getElementById("coordinates").value = coordinates;
   document.getElementById("osmId").value = osm_id;
   document.getElementById("osmType").value = osm_type;
+  const link = document.getElementById("osmLinkEdition");
+  link.href = createLinkOSM(osm_id, osm_type);
+  link.style.display = link.href ? "inline" : "none";
+};
+
+const createLinkOSM = (osm_id, osm_type) => {
+  let url = "https://www.openstreetmap.org/edit?";
+  if (osm_type === "way" || osm_type === "relation" || osm_type === "node") {
+    return `${url}${osm_type}=${osm_id}`;
+  }
+
+  return null;
 };

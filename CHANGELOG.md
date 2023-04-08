@@ -9,6 +9,7 @@
 * [style] Change in the footer.
 * [style] The header was improved.
 * [feat] Add more links in the header.
+* [feat] Add an edit button for openstreetmap.
 
 ## v1.0.0
 
