@@ -83,23 +83,24 @@ const agregarBuscador = () => {
 };
 
 const fetchData = async () => {
-  const URL = "https://nominatim.openstreetmap.org/reverse";
+  const URL = "http://localhost:4000/api/location/v1/reverse";
   const latitude = document.getElementById("user_lat").value;
   const longitude = document.getElementById("user_lng").value;
-  const zoom = 18;
-  const params = new URLSearchParams({
-    format: "json",
-    addressdetails: 1,
-    zoom,
-    lat: latitude,
-    lon: longitude,
-  });
+
   try {
-    const response = await fetch(`${URL}?${params}`);
+    const response = await fetch(`${URL}/${longitude}/${latitude}`);
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    const data = await response.json();
+
+    const json = await response.json();
+
+    if (!json.success) {
+      throw new Error(`Server error!`);
+    }
+
+    const { data } = json;
     setForm(data);
   } catch (error) {
     console.error(error);

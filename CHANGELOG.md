@@ -1,5 +1,9 @@
 # Release Notes
 
+## v1.2.0
+
+* [feat] Integrate with the back end of osm paraguay data.
+
 ## v1.1.0
 
 * [style] Change side to the map.
