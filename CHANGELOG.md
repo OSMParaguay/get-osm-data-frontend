@@ -3,6 +3,7 @@
 ## v1.2.0
 
 * [feat] Integrate with the back end of osm paraguay data.
+* [feat] Add click event in the map.
 
 ## v1.1.0
 

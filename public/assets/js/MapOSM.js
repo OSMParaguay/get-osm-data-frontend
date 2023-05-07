@@ -7,7 +7,7 @@ function loadMap() {
   const latitud = -25.2961407;
 
   const zoom = 10;
-  const minZoom = 6;
+  const minZoom = 0;
   const maxZoom = 18;
 
   map = new L.map("map", {
@@ -37,22 +37,22 @@ function loadMap() {
   });
   map.addLayer(marcador);
 
-  marcador.on("dragend", function (e) {
-    const marker = e.target;
-    const position = marker.getLatLng();
-    const lat = position.lat;
-    const lng = position.lng;
-    const lat_lng = new L.LatLng(lat, lng);
-
-    marker.setLatLng(lat_lng, {
-      draggable: "true",
-    });
-    map.panTo(lat_lng);
-
-    document.getElementById("user_lat").value = lat;
-    document.getElementById("user_lng").value = lng;
-
+  const updateMarkerPosition = (marker, latLng) => {
+    marker.setLatLng(latLng, { draggable: true });
+    map.panTo(latLng);
+    document.getElementById("user_lat").value = latLng.lat;
+    document.getElementById("user_lng").value = latLng.lng;
     fetchData();
+  };
+
+  marcador.on("dragend", function (e) {
+    const position = e.target.getLatLng();
+    updateMarkerPosition(e.target, position);
+  });
+
+  map.on("click", function (e) {
+    const latLng = e.latlng;
+    updateMarkerPosition(marcador, latLng);
   });
 
   agregarBuscador();
@@ -108,24 +108,17 @@ const fetchData = async () => {
 };
 
 const setForm = (data) => {
-  const { osm_id, osm_type, address, lat, lon } = data || {};
-  const {
-    road = "",
-    neighbourhood = address?.neighbourhood ||
-      address?.suburb ||
-      address?.quarter ||
-      "",
-    city = address?.city || address?.town || address?.village || "",
-    state = address?.state || "",
-    country = address?.country || "",
-  } = address || {};
+  const { osm_id, osm_type, address = {}, lat, lon } = data || {};
+  const { road = "", neighbourhood, city, state, country } = address;
   const coordinates = [lat, lon].filter(Boolean).join(", ");
 
   document.getElementById("road").value = road;
-  document.getElementById("neighbourhood").value = neighbourhood;
-  document.getElementById("city").value = city;
-  document.getElementById("state").value = state;
-  document.getElementById("country").value = country;
+  document.getElementById("neighbourhood").value =
+    neighbourhood || address.suburb || address.quarter || "";
+  document.getElementById("city").value =
+    city || address.city || address.town || address.village || "";
+  document.getElementById("state").value = state || address.state || "";
+  document.getElementById("country").value = country || address.country || "";
   document.getElementById("coordinates").value = coordinates;
   document.getElementById("osmId").value = osm_id;
   document.getElementById("osmType").value = osm_type;
