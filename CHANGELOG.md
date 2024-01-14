@@ -4,6 +4,7 @@
 
 * [feat] Integrate with the back end of osm paraguay data.
 * [feat] Add click event in the map.
+* [docs] Update README.md file.
 
 ## v1.1.0
 

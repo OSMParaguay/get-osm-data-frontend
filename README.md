@@ -8,3 +8,7 @@
 * Font Awesome 6.4.0
 * Leaflet 1.9.3
 * Nominatim
+
+## Use site
+
+- https://osmparaguay.proyectosbeta.net/
