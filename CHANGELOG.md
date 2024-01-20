@@ -4,6 +4,7 @@
 
 * [feat] Update Leaflet from 1.9.3 to 1.9.4.
 * [feat] Add location.
+* [feat] Add the year automatically to the index.
 
 ## v1.2.0
 
