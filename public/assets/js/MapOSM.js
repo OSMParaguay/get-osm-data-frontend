@@ -55,7 +55,16 @@ function loadMap() {
     updateMarkerPosition(marcador, latLng);
   });
 
+  map.on('locationfound', function (e) {
+    const position = e.latlng;
+    locateControl.stop()
+    updateMarkerPosition(marcador, position);
+  });
+
   agregarBuscador();
+
+  const locateControl = L.control.locate();
+  locateControl.addTo(map);
 }
 
 const agregarBuscador = () => {
